@@ -1,0 +1,6 @@
+2,11,Nước Ngọt,2025-11-15,Tay Nguyen Shop,2022,1
+1,10,Nước Suối,2023-11-14,Shop Bay,2022,2
+6,06,Thuốc 555,2025-11-2,Shop Bay,2022,2
+7,05,Rượu Ngâm,2024-11-3,Tay Nguyen Shop,2022,2
+4,08,Bia Tiger,,Tay Nguyen Shop,2022,1
+5,07,Rượu Cần,2022-05-20,Tay Nguyen Shop,2022,1

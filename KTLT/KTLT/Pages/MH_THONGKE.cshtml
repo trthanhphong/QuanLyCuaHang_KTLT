@@ -1,0 +1,154 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Danh sách thống kê";
+
+
+    string urlQuery = Request.Url.Query;
+    string oldURL = Request.Url.PathAndQuery;
+    string totalMessage = string.Empty;
+
+    var keyWord = Request["status"];
+    List<THONGKE> kq = new List<THONGKE>();
+    if (string.IsNullOrEmpty(keyWord))
+    {
+        keyWord = string.Empty;
+    }
+
+    if (keyWord.ToLower()=="expire")
+    {
+        kq = XL_THONGKE.HANG_HETHAN(DateTime.Now);
+    }
+    else
+    if(keyWord.ToLower()=="tonkho")
+    {
+        kq  =  XL_THONGKE.TONKHO();
+    }
+    else 
+    {
+        kq  =  XL_THONGKE.NHAP_XUAT();
+        XL_THONGKE.SAPXEP_THELOAI(ref kq);
+    }
+    if (kq.Count==0)
+    {
+        totalMessage = "Không có hàng tồn kho";
+    }
+    int tongtien_nhap = 0;
+    int tongtien_ban = 0;
+
+}
+<style>
+  
+    div {
+        display: block;
+        position: relative;
+    }
+    .width1{
+        width:60px;
+    }
+    .width2{
+        width:100px;
+    }
+    .width3{
+        width:140px;
+    }
+</style>
+<link href="~/Asset/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<div id="_nhaphang">
+    <h3>THỐNG KÊ HÀNG HÓA</h3>
+    <p style="color:red"> @totalMessage</p>
+    <form action="~/Pages/MH_THONGKE.cshtml" method="post">
+        <div class="row text-center m-1">
+            <a class="btn btn-success m-1" href="~/Pages/MH_THONGKE.cshtml?status=All">
+                Tình hình nhập xuất
+            </a>
+            <a class="btn btn-success m-1" href="~/Pages/MH_THONGKE.cshtml?status=tonkho">
+                Tồn kho
+            </a>
+            <a class="btn btn-success m-1" href="~/Pages/MH_THONGKE.cshtml?status=expire">
+                Quá hạn sử dụng
+            </a>
+
+        </div>
+    </form>
+    
+    <br />
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+
+            <th>Số lượng Nhập</th>
+            <th>Tiền nhập hàng</th>
+            <th>Số lượng Bán</th>
+            <th>Tiền bán hàng</th>
+
+            <th>Tồn kho</th>
+            <th>Hạn dùng</th>
+            <th>Loại hàng</th>
+
+        </tr>
+        @if (kq.Count > 0)
+        {
+            var i = 0;
+            foreach (var s in kq)
+            {
+                i++;
+                tongtien_ban += s.TienBan;
+                tongtien_nhap += s.TienNhap;
+                <tr id="@s.CodeId">
+                    <td class="width1">@i</td>
+                    <td class="width2">@s.CodeId</td>
+                    <td>@s.Name</td>
+
+                    <td class="width3">@s.SoluongNhap</td>
+                    <td class="width3">@s.TienNhap</td>
+                    <td class="width3">@s.SoluongBan</td>
+                    <td class="width3">@s.TienBan</td>
+                    <td class="width2">@(s.SoluongNhap - s.SoluongBan)</td>
+                    <td class="width2">@s.Expire</td>
+                    <td>@s.CateName</td>
+
+                </tr>
+               
+            }
+        }
+        <tr>
+            <td></td>
+            <td colspan="3">Tổng</td>
+            <td>@tongtien_nhap</td>
+            <td></td>
+            <td>@tongtien_ban</td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+
+
+       function populateList(select){
+
+           alert("Test");
+       }
+
+            function tinhtien() {
+                var soluong = document.getElementById("soluong").value;
+                var dongia = document.getElementById("dongia").value;
+                var thue = document.getElementById("thue").value;
+                var tien = dongia * soluong;
+                var tienthue = (tien * thue) / 100;
+                document.getElementById("tien").value= tien;
+                document.getElementById("tienthue").value= tienthue;
+                document.getElementById("tongtien").value= tien+tienthue;
+
+
+            }
+            function getHanghoa()
+            {
+                document.getElementById("tenhang").value = $( "#mahang option:selected" ).text();
+            }
+</script>
+

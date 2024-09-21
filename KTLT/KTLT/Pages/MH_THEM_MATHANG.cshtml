@@ -1,0 +1,138 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Thêm mặt hàng";
+
+    var oldUrl = Request.Url.Query;
+    if (oldUrl.Contains('?'))
+    {
+        oldUrl = oldUrl.Remove(0,1);
+        Session["oldUrl"] = oldUrl;
+    }
+    if (Session["oldUrl"]==null)
+    {
+        Session["oldUrl"] = oldUrl;
+    }
+    string totalMessage = string.Empty;
+    PRODUCT prod=new PRODUCT();
+    var prodId = Request["prodId"];
+    List<CATEGORY> lstCate = XL_CATEGORY.ReadALlCategory("");
+    if (IsPost)
+    {
+
+        if (string.IsNullOrEmpty(prodId))
+        {
+            prodId = "0";
+        }
+
+        prod.CodeId = Request["prodCode"];
+        prod.Name  = Request["prodName"];
+        prod.Expire = Request["prodExp"];
+        prod.Cty = Request["company"];
+        var prodYear = Request["prodYear"];
+        var cateId = Request["cateId"];
+
+        prod.NamSX = int.Parse(prodYear);
+        prod.CateId =int.Parse(cateId);
+
+        prod.Id = int.Parse(prodId);
+
+        bool status = false;
+        if (prod.Id==0)
+        {
+            status = XL_PRODUCT.AddProduct(prod);
+        }
+        else
+        {
+            status = XL_PRODUCT.Update(prod);
+        }
+        if (!status)
+        {
+            totalMessage = "Lỗi cập nhật sản phẩm!";
+        }
+        oldUrl = (string)Session["oldUrl"];
+        if (oldUrl.Length>0)
+        {
+            Response.Redirect(oldUrl);
+        }
+        else
+        {
+            Response.Redirect("~/Pages/MH_MATHANG.cshtml");
+        }
+
+    }
+    else
+    {
+
+        if (string.IsNullOrEmpty(prodId))
+        {
+            prodId = "0";
+        }
+        prod = XL_PRODUCT.GetID(int.Parse(prodId));
+        if (string.IsNullOrEmpty(prod.Name))
+        {
+            prod.NamSX = DateTime.Now.Year;
+        }
+    }
+}
+
+
+    <div class="container">
+        <form action="~/Pages/MH_THEM_MATHANG.cshtml" method="post">
+            <fieldset>
+                <legend>NHẬP SẢN PHẤM</legend>
+                <p>
+                    <label for="prodCode">Mã hàng</label>
+                    <input type="text" name="prodCode" value="@prod.CodeId" />
+                </p>
+                <p>
+                    <label for="prodName">Tên hàng</label>
+                    <input type="text" name="prodName" value="@prod.Name" />
+                </p>
+                <p>
+                    <label for="prodExp">Hạn dùng</label>
+                    <input type="date" name="prodExp" value="@prod.Expire" />
+                </p>
+                <p>
+                    <label for="company">Nhà SX:</label>
+                    <input type="text" name="company" value="@prod.Cty" />
+                </p>
+                <p>
+                    <label for="prodYear">Năm SX:</label>
+                    <input type="number" name="prodYear" value="@prod.NamSX" />
+                </p>
+
+                <p>
+                    <label for="cateId">Loại hàng</label>
+                    <select id="cateId" name="cateId" onchange="GetCategoryName()">
+                        @foreach (CATEGORY item in lstCate)
+                        {
+                            if (prod.CateId == item.CateId)
+                            {
+                                <option value="@item.CateId" selected>@item.CateName</option>
+                            }
+                            else
+                            {
+                                <option value="@item.CateId">@item.CateName</option>
+                            }
+
+                        }
+                    </select>
+                    <input type="text" name="cateName" id="cateName" value="@prod.Name" hidden />
+
+                </p>
+                <p>
+                    <input type="text" name="prodId" value="@prod.Id" hidden />
+                </p>
+                <p><input class="btn btn-success" type="submit" name="themMathang" value=" Thêm " /></p>
+            </fieldset>
+        </form>
+        <strong style="color:red"> @totalMessage</strong>
+    </div>
+    <script>
+        function GetCategoryName() {
+            document.getElementById("cateName").value = $("#cateId option:selected").text();
+        }
+    </script>
+@*</body>
+</html>*@

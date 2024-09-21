@@ -1,0 +1,36 @@
+﻿@using KTLT
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Page.Title</title>
+    <link href="~/Asset/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+   
+</head>
+
+<body>
+    <div id="placeholdHeader" class="header text-center pb-1">
+    </div>
+
+
+    <div id="menu_bar_nav">
+        <div id="menu">
+            <ul>
+                <li><a href="~/Pages/MH_LOAIHANG.cshtml">Loại hàng</a></li>
+                <li><a href="~/Pages/MH_MATHANG.cshtml">Sản phẩm</a></li>
+                <li><a href="~/Pages/MH_HANGHOA_NHAP.cshtml">Nhập hàng</a></li>
+                <li><a href="~/Pages/MH_HANGHOA_BAN.cshtml">Bán hàng</a></li>
+                <li><a href="~/Pages/MH_THONGKE.cshtml">Thống kê</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="placeholdBody">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

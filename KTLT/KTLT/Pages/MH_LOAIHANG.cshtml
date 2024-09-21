@@ -1,0 +1,56 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Danh sách loại hàng";
+
+    string totalMessage = string.Empty;
+    string keyword = Request["keyword"];
+
+    List<CATEGORY> kq = new List<CATEGORY>();
+
+    kq = XL_CATEGORY.ReadALlCategory(keyword);
+
+}
+
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <div>
+        <h3>LOẠI HÀNG HÓA</h3>
+        
+        <form action="~/Pages/MH_LOAIHANG.cshtml" method="post">
+            <p><input type="text" name="keyword" value="" placeholder="Tên loại hàng" /> </p>
+
+            <p>
+                <input class="btn btn-success"  type="submit" value=" Tìm kiếm" />
+                <a class="btn btn-success" href="~/Pages/MH_THEM_LOAIHANG.cshtml">Thêm loại hàng</a>
+            </p>
+        </form>
+        <table>
+            <tr>
+                <th>Mã loại</th>
+                <th>Tên loại</th>
+                <th>Action</th>
+
+            </tr>
+            @if (kq.Count > 0)
+            {
+                foreach (var s in kq)
+                {
+                    <tr>
+                        <td>@s.CateId</td>
+                        <td>@s.CateName</td>
+                        <td>
+                            <a href="~/Pages/MH_XOA_LOAIHANG.cshtml?cateid=@s.CateId">Xóa</a>
+                            <a href="~/Pages/MH_THEM_LOAIHANG.cshtml?cateid=@s.CateId">Sửa</a>
+                        </td>
+                    </tr>
+
+                }
+            }
+        </table>
+
+
+
+    </div>
+
+

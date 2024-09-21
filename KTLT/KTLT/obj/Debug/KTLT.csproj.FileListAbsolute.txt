@@ -1,0 +1,146 @@
+C:\20880242\KTLT\KTLT_1988260\bin\KTLT.dll.config
+C:\20880242\KTLT\KTLT_1988260\bin\KTLT.dll
+C:\20880242\KTLT\KTLT_1988260\bin\KTLT.pdb
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\csc.exe
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\csc.exe.config
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\csc.rsp
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\csi.exe
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\csi.rsp
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.AppContext.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.Collections.Immutable.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.IO.FileSystem.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\System.Reflection.Metadata.dll
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\vbc.exe
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\vbc.exe.config
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\vbc.rsp
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\VBCSCompiler.exe
+C:\20880242\KTLT\KTLT_1988260\bin\roslyn\VBCSCompiler.exe.config
+C:\20880242\KTLT\KTLT_1988260\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\20880242\KTLT\KTLT_1988260\bin\Microsoft.Web.Infrastructure.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Helpers.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Mvc.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Razor.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.Deployment.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.Razor.dll
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Helpers.xml
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Mvc.xml
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.Razor.xml
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.xml
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.Deployment.xml
+C:\20880242\KTLT\KTLT_1988260\bin\System.Web.WebPages.Razor.xml
+C:\20880242\KTLT\KTLT_1988260\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\20880242\KTLT\KTLT_1988260\obj\Debug\KTLT.csproj.AssemblyReference.cache
+C:\20880242\KTLT\KTLT_1988260\obj\Debug\KTLT.csproj.CoreCompileInputs.cache
+C:\20880242\KTLT\KTLT_1988260\obj\Debug\KTLT.dll
+C:\20880242\KTLT\KTLT_1988260\obj\Debug\KTLT.pdb
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.dll.config
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.pdb
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.exe
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.exe.config
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.rsp
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csi.exe
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csi.rsp
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.AppContext.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Collections.Immutable.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.IO.FileSystem.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Reflection.Metadata.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.exe
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.exe.config
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.rsp
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\VBCSCompiler.exe
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\VBCSCompiler.exe.config
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.Web.Infrastructure.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Helpers.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Mvc.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Razor.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Deployment.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Razor.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Helpers.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Mvc.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Razor.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Deployment.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Razor.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\VB2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.AssemblyReference.cache
+C:\VB2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.CoreCompileInputs.cache
+C:\VB2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.CopyComplete
+C:\VB2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.dll
+C:\VB2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.pdb
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.dll.config
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\KTLT.pdb
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.exe
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.exe.config
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csc.rsp
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csi.exe
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\csi.rsp
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.AppContext.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Collections.Immutable.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.IO.FileSystem.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\System.Reflection.Metadata.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.exe
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.exe.config
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\vbc.rsp
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\VBCSCompiler.exe
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\roslyn\VBCSCompiler.exe.config
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.Web.Infrastructure.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Helpers.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Mvc.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Razor.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Deployment.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Razor.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Helpers.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Mvc.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.Razor.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Deployment.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\System.Web.WebPages.Razor.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.AssemblyReference.cache
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.CoreCompileInputs.cache
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.csproj.CopyComplete
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.dll
+C:\VB2\2 HỌC KỲ 2\KTLT1\21880103\KTLT\KTLT\obj\Debug\KTLT.pdb

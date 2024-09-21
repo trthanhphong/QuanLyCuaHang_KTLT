@@ -1,0 +1,74 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Danh sách mặt hàng";
+
+    string totalMessage = string.Empty;
+    string keyword = Request["keyword"];
+   
+    List<CATEGORY> lstCate = XL_CATEGORY.ReadALlCategory("");
+    List<PRODUCT> kq =XL_PRODUCT.ReadProduct(keyword);
+
+}
+
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <div>
+        <h3>HÀNG HÓA</h3>
+       
+        <form action="~/Pages/MH_MATHANG.cshtml" method="post">
+            <p><input type="text" name="keyword" value="" /> </p>
+
+            <p>
+                <input class="btn btn-success" type="submit" value=" Tìm kiếm" />
+                <a class="btn btn-success" href="~/Pages/MH_THEM_MATHANG.cshtml">Thêm Mặt hàng</a>
+            </p>
+        </form>
+        <table>
+            <tr>
+                <th>Mã hàng</th>
+                <th>Tên hàng</th>
+                <th>Hạn dùng</th>
+                <th>Công ty</th>
+                <th>Năm SX</th>
+                <th>Loại hàng</th>
+
+                <th>Action</th>
+
+            </tr>
+            @if (kq.Count > 0)
+            {
+                foreach (var s in kq)
+                {
+                    var loai = string.Empty;
+                    foreach (var cate in lstCate)
+                    {
+                        if (cate.CateId==s.CateId)
+                        {
+                            loai = cate.CateName;
+
+                        }
+                    }
+                    <tr id="@s.Id">
+                        <td>@s.CodeId</td>
+                        <td>@s.Name</td>
+                        <td>@s.Expire</td>
+                        <td>@s.Cty</td>
+                        <td>@s.NamSX</td>
+                        <td>@loai</td>
+                        <td>
+                            <a href="~/Pages/MH_XOA_MATHANG.cshtml?prodId=@s.Id">Xóa</a>
+                            <a href="~/Pages/MH_THEM_MATHANG.cshtml?prodId=@s.Id">Sửa</a>
+                        </td>
+                    </tr>
+
+                }
+            }
+        </table>
+
+
+
+    </div>
+
+@*</body>
+</html>*@

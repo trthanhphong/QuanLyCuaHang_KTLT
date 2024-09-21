@@ -1,0 +1,30 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Xóa loại hàng";
+
+    string totalMessage = string.Empty;
+    string keywork = Request["cateid"];
+    if (IsPost)
+    {
+        if (!string.IsNullOrEmpty(keywork))
+        {
+            XL_CATEGORY.Delete(int.Parse(keywork));
+        }
+        
+        Response.Redirect("~/Pages/MH_LOAIHANG.cshtml");
+    }
+    else
+    {
+        totalMessage = $"Bạn có muốn xóa với ID={keywork} hay không?";
+    }
+}
+
+
+    <div>
+        @totalMessage
+        <form action="~/Pages/MH_XOA_LOAIHANG.cshtml?cateid=@keywork" method="post">
+            <input type="submit" value=" Xóa " />
+        </form>
+    </div>
+

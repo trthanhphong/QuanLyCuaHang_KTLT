@@ -1,0 +1,29 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Xóa mặt hàng";
+    string totalMessage = string.Empty;
+    string keywork = Request["sohd"];
+    if (IsPost)
+    {
+        if (!string.IsNullOrEmpty(keywork))
+        {
+          XL_HOADON_BAN.Delete(keywork);
+        }
+        
+        Response.Redirect("~/Pages/MH_HANGHOA_BAN.cshtml");
+    }
+    else
+    {
+        totalMessage = $"Bạn có muốn xóa hóa đơn với số={keywork} hay không?";
+    }
+}
+
+
+    <div>
+        @totalMessage
+        <form action="~/Pages/MH_XOAHD_BANHANG.cshtml?sohd=@keywork" method="post">
+            <input type="submit" value=" Xóa " />
+        </form>
+    </div>
+

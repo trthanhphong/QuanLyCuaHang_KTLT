@@ -1,0 +1,66 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Thêm loại hàng";
+    string totalMessage = string.Empty;
+    CATEGORY cate=new CATEGORY();
+    var cateID = Request["cateId"];
+    if (IsPost)
+    {
+        var cateName = Request["cateName"];
+        cate.CateName = cateName;
+        if (string.IsNullOrEmpty(cateID))
+        {
+            cateID = "0";
+        }
+        cate.CateId = int.Parse(cateID);
+        bool status = false;
+        if (cate.CateId==0)
+        {
+            status = XL_CATEGORY.AddCategory(cate);
+        }
+        else
+        {
+            status = XL_CATEGORY.UpdateCategory(cate);
+        }
+        if (!status)
+        {
+            totalMessage = "Cập nhật loại hàng bị lỗi!";
+        }
+        else
+        {
+             Response.Redirect("~/Pages/MH_LOAIHANG.cshtml");
+        }
+       
+    }
+    else
+    {
+        if (string.IsNullOrEmpty(cateID))
+        {
+            cateID = "0";
+        }
+        cate = XL_CATEGORY.GetID(int.Parse(cateID));
+
+    }
+}
+
+    <div class="container">
+        <form action="~/Pages/MH_THEM_LOAIHANG.cshtml" method="post">
+            <fieldset>
+                <legend>LOẠI HÀNG</legend>
+
+                <p>
+                    <label for="cateName">Tên loại hàng</label>
+                    <input type="text" name="cateName" value="@cate.CateName" />
+                </p>
+                <p>
+                    <label for="cateId">Loại hàng</label>
+                    <input type="text" name="cateId" value="@cate.CateId" readonly />
+                </p>
+                <p><input type="submit" name="themCategory" value=" Thêm " /></p>
+            </fieldset>
+        </form>
+        <strong style="color:red"> @totalMessage</strong>
+    </div>
+
+

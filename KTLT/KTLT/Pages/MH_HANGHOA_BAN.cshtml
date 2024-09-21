@@ -1,0 +1,78 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Danh sách hàng bán";
+
+
+    string totalMessage = string.Empty;
+    string urlQuery = Request.Url.Query;
+    string oldURL = Request.Url.PathAndQuery;
+
+    List<HOADON> kq = new List<HOADON>();
+    string keyword = Request["masohoadon"];
+
+    kq = XL_HOADON_BAN.ReadHOADON(keyword);
+    var tongtien = 0;
+
+}
+<link href="~/Asset/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<div id="_nhaphang">
+    <h2>TÌNH HÌNH BÁN HÀNG</h2>
+    <form action="~/Pages/MH_HANGHOA_BAN.cshtml" method="post">
+        <p>
+            <label for="masohoadon">Số hóa đơn:</label>
+            <input type="text" name="masohoadon" value=@keyword />
+            <input type="text" name="loaihd" value="N" hidden />
+
+        </p>
+        <div class="row text-center m-1">
+            <input class="btn btn-success m-1" type="submit" value=" Tìm kiếm" />
+            <a class="btn btn-success m-1" href="~/Pages/MH_HOADON_BAN.cshtml?sohd=0">Nhập Bán hàng</a>
+        </div>
+    </form>
+    <br />
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Tiền</th>
+            <th>Số HĐ</th>
+            <th>Action</th>
+        </tr>
+        @if (kq.Count > 0)
+        {
+            var i = 0; 
+            foreach (var s in kq)
+            {
+                i++;
+                tongtien += s.Tien;
+                <tr id="@s.Id">
+                    <td>@i</td>
+                    <td>@s.CodeId</td>
+                    <td>@s.Name</td>
+                    <td>@s.Dongia</td>
+                    <td>@s.Soluong</td>
+                    <td>@s.Tien</td>
+                    <td>@s.masoHD</td>
+                    <td>
+                        <a href="~/Pages/MH_XOAHD_BANHANG.cshtml?sohd=@s.masoHD">Xóa</a>
+                        <a href="~/Pages/MH_HOADON_BAN.cshtml?sohd=@s.masoHD">Sửa</a>
+                    </td>
+                </tr>
+            }
+        }  
+        <tr>
+            <td></td>
+            <td colspan="4">Tổng</td>
+            <td>@tongtien</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+

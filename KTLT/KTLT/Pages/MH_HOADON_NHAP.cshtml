@@ -1,0 +1,227 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Danh sách hàng nhập";
+
+    HOADON prodHD = new HOADON();  // Product in Hóa đơn
+    string urlQuery = Request.Url.Query;
+    string oldURL = Request.Url.PathAndQuery;
+    string totalMessage = string.Empty;
+    if (oldURL.Contains('~'))
+    {
+        string[] ss = oldURL.Split('~');
+        oldURL = "~" + ss[1];
+        Session["oldurl"] = oldURL;
+    }
+    List<HOADON> hoadon = new List<HOADON>();
+    List<PRODUCT> prodList = XL_PRODUCT.ReadProduct("");
+    prodHD.masoHD = Request["masohoadon"];
+    string sohd = Request["sohd"];
+    string prodId = Request["prodId"];
+
+    if (string.IsNullOrEmpty(sohd))
+    {
+        sohd = "0";
+    }
+    if (string.IsNullOrEmpty(prodId))
+    {
+        prodId = "0";
+    }
+    if (IsPost)
+    {
+        bool status = false;
+        prodHD.masoHD = Request["masohoadon"];
+        if (!string.IsNullOrEmpty(prodHD.masoHD))
+        {
+            prodHD.Ngay = Request["ngayhd"];
+            sohd = prodHD.masoHD;
+            prodHD.Id = int.Parse(Request["nhapid"]);
+            prodHD.CodeId = Request["mahang"];
+            prodHD.Name = Request["tenhang"];
+
+            prodHD.Dongia = int.Parse(Request["dongia"]);
+            prodHD.Soluong = int.Parse(Request["soluong"]);
+            prodHD.Tien = int.Parse(Request["tien"]);
+
+            prodHD.LoaiHD = Request["loaihd"];
+            if (prodHD.Id == 0)
+            {
+                status = XL_HOADON_NHAP.AddProduct(prodHD);
+            }
+            else
+            {
+                status = XL_HOADON_NHAP.UpdateProduct(prodHD);
+            }
+            if (!status)
+            {
+                totalMessage = "Lỗi cập nhật sản phẩm!";
+            }
+        }
+    }
+
+    hoadon = XL_HOADON_NHAP.GetBySoHD(sohd);
+    if (hoadon.Count > 0)
+    {
+        if (int.Parse(prodId) > 0 && hoadon.Count > 0)
+        {
+            prodHD = XL_HOADON_NHAP.GetByID(hoadon, int.Parse(prodId));
+        }
+        else
+        {
+            prodHD = hoadon[0];
+            prodHD.Id = 0;
+        }
+    }
+
+    var tongtien = 0;
+}
+
+<link href="~/Asset/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<div id="_nhaphang" class="container-fluid">
+    <div class="container">
+        <h2>NHẬP HÓA ĐƠN HÀNG</h2>
+        <form action="~/Pages/MH_HOADON_NHAP.cshtml" method="post">
+            <input type="text" name="loaihd" value="N" hidden />
+
+            <div class="row">
+
+                <div class="col-4">
+                    <label for="masohoadon">Số hóa đơn:</label>
+                    <input type="text" name="masohoadon" value=@sohd />
+                </div>
+                <div class="col-4">
+                    <label for="ngayhd">Ngày Nhập:</label>
+                    <input class="date" type="date" name="ngayhd" value=@prodHD.Ngay />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2  ml-3 mr-3">
+
+                    <div class="row text-center">
+                        <label for="mahang">Tên hàng</label>
+                    </div>
+                    <div class="row">
+                        <select class="productName" name="mahang" id="mahang" onchange="getHanghoa()" onmouseup="getTenHanghoa()">
+                            <option value="0">Chọn mặt hàng</option>
+                            @foreach (PRODUCT item in prodList)
+                            {
+                                if (prodHD.CodeId == item.CodeId)
+                                {
+                                    <option value="@item.CodeId" selected>@item.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.CodeId">@item.Name</option>
+                                }
+
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-1">
+                    <div class="row">
+                        <label for="dongia">Đơn giá</label>
+                    </div>
+                    <div class="row widthCol1">
+                        <input class="width1" type="number" id="dongia" name="dongia" value=@prodHD.Dongia onchange="tinhtien()" />
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row ">
+                        <label for="soluong">Số lượng</label>
+                    </div>
+                    <div class="row widthCol1">
+                        <input class="width1" type="number" id="soluong" name="soluong" value=@prodHD.Soluong min="0" onchange="tinhtien()" onblur="tinhtien()" />
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row">
+                        <label for="tien">Tiền</label>
+
+                    </div>
+                    <div class="row widthCol2">
+                        <input class="width2" type="number" id="tien" name="tien" value=@prodHD.Tien readonly />
+                    </div>
+
+                </div>
+                <div class="col hide">
+                    <input type="text" name="nhapid" id="nhapid" value=@prodHD.Id hidden />
+                    <input type="text" name="tenhang" id="tenhang" value=@prodHD.Name hidden />
+                </div>
+            </div>
+
+            <div class="row text-center m-1">
+                <input class="btn btn-success m-1" type="submit" value="Nhập HĐ" />
+                <a class="btn btn-success m-1" href="~/Pages/MH_THEM_MATHANG.cshtml?~@oldURL">Nhập thêm hàng</a>
+            </div>
+
+        </form>
+    </div>
+    <strong style="color:red"> @totalMessage</strong>
+    <br />
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Mã hàng</th>
+            <th>Tên hàng</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Tiền</th>
+            <th>Số HĐ</th>
+            <th>Action</th>
+        </tr>
+        @if (hoadon.Count > 0)
+        {
+            var i = 0;
+            foreach (var s in hoadon)
+            {
+                i++;
+                tongtien += s.Tien;
+                <tr id="@s.Id">
+                    <td>@i</td>
+                    <td>@s.CodeId</td>
+                    <td>@s.Name</td>
+
+                    <td>@s.Dongia</td>
+                    <td>@s.Soluong</td>
+                    <td>@s.Tien</td>
+
+                    <td>@s.masoHD</td>
+                    <td>
+                        <a href="~/Pages/MH_XOAHANG_NHAP.cshtml?sohd=@s.masoHD&prodId=@s.Id">Xóa</a>
+                        <a href="~/Pages/MH_HOADON_NHAP.cshtml?sohd=@s.masoHD&prodId=@s.Id">Sửa</a>
+                    </td>
+                </tr>
+
+            }
+        }
+        <tr>
+            <td></td>
+            <td colspan="4">Tổng</td>
+            <td>@tongtien</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+
+    function tinhtien() {
+        var soluong = document.getElementById("soluong").value;
+        var dongia = document.getElementById("dongia").value;
+        var tien = dongia * soluong;
+        document.getElementById("tien").value = tien;
+    }
+    function getHanghoa() {
+        document.getElementById("tenhang").value = $("#mahang option:selected").text();
+        document.getElementById("tenhang").hidden = true;
+    }
+    function getTenHanghoa() {
+        document.getElementById("tenhang").value = $("#mahang option:selected").text();
+
+    }
+</script>

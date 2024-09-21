@@ -1,0 +1,30 @@
+﻿@using KTLT
+@{
+    Layout = "~/_LayoutPage1.cshtml";
+    Page.Title = "Xóa hàng trong Hóa đơn";
+    string totalMessage = string.Empty;
+    string keywork = Request["sohd"];
+    string prodId = Request["prodId"];
+    if (IsPost)
+    {
+        if (!string.IsNullOrEmpty(prodId))
+        {
+          XL_HOADON_NHAP.DeleteProduct(int.Parse(prodId));
+        }
+        
+        Response.Redirect("~/Pages/MH_HOADON_NHAP.cshtml");
+    }
+    else
+    {
+        totalMessage = $"Bạn có muốn xóa hàng trong hóa đơn với số={keywork} có mã id {prodId}hay không?";
+    }
+}
+
+
+    <div>
+        @totalMessage
+        <form action="~/Pages/MH_XOAHD_NHAPHANG.cshtml?prodId=@keywork" method="post">
+            <input type="submit" value=" Xóa " />
+        </form>
+    </div>
+
